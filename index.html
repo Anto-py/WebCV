@@ -414,20 +414,40 @@ body {
   cursor: pointer;
   padding: 14px 16px;
   border-radius: 8px;
-  transition: background 0.2s;
+  transition: background 0.2s, box-shadow 0.2s;
   margin-left: -16px;
+  border: 1.5px solid transparent;
 }
-.t-header:hover { background: rgba(18,118,118,0.06); }
+.t-header:hover {
+  background: rgba(18,118,118,0.08);
+  border-color: rgba(18,118,118,0.25);
+  box-shadow: 0 2px 10px rgba(18,118,118,0.08);
+}
+.t-item.collapsed .t-header {
+  border-color: rgba(18,118,118,0.18);
+}
 .t-header-meta { flex: 1; }
 
 .t-chevron {
-  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(18,118,118,0.1);
+  border: 1.5px solid rgba(18,118,118,0.3);
+  font-size: 1rem;
   color: var(--teal);
-  transition: transform 0.3s ease;
-  opacity: 0.6;
+  transition: transform 0.3s ease, background 0.2s, border-color 0.2s;
   flex-shrink: 0;
-  padding-top: 2px;
+  margin-top: 2px;
   user-select: none;
+}
+.t-header:hover .t-chevron {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--paper);
 }
 .t-item.collapsed .t-chevron { transform: rotate(-90deg); }
 
@@ -968,11 +988,11 @@ body.en .training-grid[data-lang="en"] { display: grid; }
     <div class="timeline">
 
       <div class="timeline-controls">
-        <button class="t-toggle-all" id="toggleAllBtn" onclick="toggleAll()" data-lang="fr">Tout réduire</button>
-        <button class="t-toggle-all" id="toggleAllBtnEn" onclick="toggleAll()" data-lang="en">Collapse all</button>
+        <button class="t-toggle-all" id="toggleAllBtn" onclick="toggleAll()" data-lang="fr">Tout déplier</button>
+        <button class="t-toggle-all" id="toggleAllBtnEn" onclick="toggleAll()" data-lang="en">Expand all</button>
       </div>
 
-      <div class="t-item">
+      <div class="t-item collapsed">
         <div class="t-dot"></div>
         <div class="t-header" onclick="toggleItem(this)">
           <div class="t-header-meta">
@@ -998,7 +1018,7 @@ body.en .training-grid[data-lang="en"] { display: grid; }
         </div>
       </div>
 
-      <div class="t-item">
+      <div class="t-item collapsed">
         <div class="t-dot"></div>
         <div class="t-header" onclick="toggleItem(this)">
           <div class="t-header-meta">
@@ -1014,19 +1034,21 @@ body.en .training-grid[data-lang="en"] { display: grid; }
           <div class="t-points" data-lang="fr">
             <div class="t-point">Contenu interactif</div>
             <div class="t-point">STEAM et IA</div>
+            <div class="t-point">IA et créativité</div>
             <div class="t-point">NotebookLM et Gems</div>
             <div class="t-point">Refonte du nouveau parcours référent IA avec Edulab</div>
           </div>
           <div class="t-points" data-lang="en">
             <div class="t-point">Interactive Content</div>
             <div class="t-point">STEAM & AI</div>
+            <div class="t-point">AI & Creativity</div>
             <div class="t-point">NotebookLM & Gems</div>
             <div class="t-point">Redesign of the new AI advisor training with Edulab</div>
           </div>
         </div>
       </div>
 
-      <div class="t-item">
+      <div class="t-item collapsed">
         <div class="t-dot"></div>
         <div class="t-header" onclick="toggleItem(this)">
           <div class="t-header-meta">
@@ -1054,7 +1076,7 @@ body.en .training-grid[data-lang="en"] { display: grid; }
         </div>
       </div>
 
-      <div class="t-item">
+      <div class="t-item collapsed">
         <div class="t-dot"></div>
         <div class="t-header" onclick="toggleItem(this)">
           <div class="t-header-meta">
