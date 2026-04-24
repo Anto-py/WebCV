@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Antonin Bareau — CV</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Oswald:wght@300;400;600;700&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&amp;display=swap" rel="stylesheet"/>
 <style>
 :root {
   --teal:   #127676;
@@ -847,496 +848,462 @@ body.en .training-grid[data-lang="en"] { display: grid; }
 </style>
 </head>
 <body class="fr">
-
 <!-- ══ POPUP MODAL ══ -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-  <div class="modal" role="dialog" aria-modal="true">
-    <button class="modal-close" onclick="closeModalDirect()" aria-label="Fermer">✕</button>
-    <span class="modal-icon" id="modalIcon"></span>
-    <div class="modal-title" id="modalTitle"></div>
-    <span class="modal-accent"></span>
-    <div class="modal-body" id="modalBody"></div>
-  </div>
+<div aria-modal="true" class="modal" role="dialog">
+<button aria-label="Fermer" class="modal-close" onclick="closeModalDirect()">✕</button>
+<span class="modal-icon" id="modalIcon"></span>
+<div class="modal-title" id="modalTitle"></div>
+<span class="modal-accent"></span>
+<div class="modal-body" id="modalBody"></div>
 </div>
-
+</div>
 <!-- Lang switcher -->
-<div class="lang-switch" role="group" aria-label="Language">
-  <button onclick="setLang('fr')" id="btn-fr" class="active">FR</button>
-  <button onclick="setLang('en')" id="btn-en">EN</button>
+<div aria-label="Language" class="lang-switch" role="group">
+<button class="active" id="btn-fr" onclick="setLang('fr')">FR</button>
+<button id="btn-en" onclick="setLang('en')">EN</button>
 </div>
-
 <!-- PAGE FRAME -->
 <div class="page-frame">
-
-  <!-- Corner SVGs — top-right, bottom-left, bottom-right only -->
-  <svg class="corner-svg tr" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8,8 C8,8 28,8 42,22 C56,36 50,56 50,56 C50,56 36,44 22,44 C8,44 8,8 8,8 Z" stroke="#127676" stroke-width="1.5" opacity="0.55"/>
-    <circle cx="12" cy="12" r="4" fill="#127676" opacity="0.45"/>
-    <path d="M22,22 Q30,14 38,26" stroke="#127676" stroke-width="1" opacity="0.4"/>
-    <circle cx="50" cy="50" r="2" fill="#E4632E" opacity="0.5"/>
-  </svg>
-  <svg class="corner-svg bl" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8,8 C8,8 28,8 42,22 C56,36 50,56 50,56 C50,56 36,44 22,44 C8,44 8,8 8,8 Z" stroke="#127676" stroke-width="1.5" opacity="0.55"/>
-    <circle cx="12" cy="12" r="4" fill="#127676" opacity="0.45"/>
-    <path d="M22,22 Q30,14 38,26" stroke="#127676" stroke-width="1" opacity="0.4"/>
-    <circle cx="50" cy="50" r="2" fill="#E4632E" opacity="0.5"/>
-  </svg>
-  <svg class="corner-svg br" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8,8 C8,8 28,8 42,22 C56,36 50,56 50,56 C50,56 36,44 22,44 C8,44 8,8 8,8 Z" stroke="#127676" stroke-width="1.5" opacity="0.55"/>
-    <circle cx="12" cy="12" r="4" fill="#127676" opacity="0.45"/>
-    <path d="M22,22 Q30,14 38,26" stroke="#127676" stroke-width="1" opacity="0.4"/>
-    <circle cx="50" cy="50" r="2" fill="#E4632E" opacity="0.5"/>
-  </svg>
-
-  <!-- ══ HERO ══ -->
-  <section class="hero">
-    <div class="hero-content">
-
-      <div class="hero-eyebrow" data-lang="fr">
-        <span class="eyebrow-dot"></span>
-        <span class="eyebrow-text">Bruxelles</span>
-      </div>
-      <div class="hero-eyebrow" data-lang="en">
-        <span class="eyebrow-dot"></span>
-        <span class="eyebrow-text">Brussels</span>
-      </div>
-
-      <h1 class="hero-name">
-        <span class="firstname">Antonin</span>
-        <span class="lastname">Bareau</span>
-      </h1>
-
-      <div class="hero-pills" data-lang="fr">
-        <span class="pill">Référent IA</span>
-        <span class="pill">Conseiller techno-pédagogique</span>
-        <span class="pill">Formateur</span>
-        <span class="pill">Enseignant</span>
-      </div>
-      <div class="hero-pills" data-lang="en">
-        <span class="pill">AI Advisor</span>
-        <span class="pill">EdTech Consultant</span>
-        <span class="pill">Trainer</span>
-        <span class="pill">Teacher</span>
-      </div>
-
-      <p class="hero-tagline" data-lang="fr">
-        Je construis les ponts entre la pédagogie,<br>le numérique et les enseignants.
+<!-- Corner SVGs — top-right, bottom-left, bottom-right only -->
+<svg class="corner-svg tr" fill="none" viewbox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+<path d="M8,8 C8,8 28,8 42,22 C56,36 50,56 50,56 C50,56 36,44 22,44 C8,44 8,8 8,8 Z" opacity="0.55" stroke="#127676" stroke-width="1.5"></path>
+<circle cx="12" cy="12" fill="#127676" opacity="0.45" r="4"></circle>
+<path d="M22,22 Q30,14 38,26" opacity="0.4" stroke="#127676" stroke-width="1"></path>
+<circle cx="50" cy="50" fill="#E4632E" opacity="0.5" r="2"></circle>
+</svg>
+<svg class="corner-svg bl" fill="none" viewbox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+<path d="M8,8 C8,8 28,8 42,22 C56,36 50,56 50,56 C50,56 36,44 22,44 C8,44 8,8 8,8 Z" opacity="0.55" stroke="#127676" stroke-width="1.5"></path>
+<circle cx="12" cy="12" fill="#127676" opacity="0.45" r="4"></circle>
+<path d="M22,22 Q30,14 38,26" opacity="0.4" stroke="#127676" stroke-width="1"></path>
+<circle cx="50" cy="50" fill="#E4632E" opacity="0.5" r="2"></circle>
+</svg>
+<svg class="corner-svg br" fill="none" viewbox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+<path d="M8,8 C8,8 28,8 42,22 C56,36 50,56 50,56 C50,56 36,44 22,44 C8,44 8,8 8,8 Z" opacity="0.55" stroke="#127676" stroke-width="1.5"></path>
+<circle cx="12" cy="12" fill="#127676" opacity="0.45" r="4"></circle>
+<path d="M22,22 Q30,14 38,26" opacity="0.4" stroke="#127676" stroke-width="1"></path>
+<circle cx="50" cy="50" fill="#E4632E" opacity="0.5" r="2"></circle>
+</svg>
+<!-- ══ HERO ══ -->
+<section class="hero">
+<div class="hero-content">
+<div class="hero-eyebrow" data-lang="fr">
+<span class="eyebrow-dot"></span>
+<span class="eyebrow-text">Bruxelles</span>
+</div>
+<div class="hero-eyebrow" data-lang="en">
+<span class="eyebrow-dot"></span>
+<span class="eyebrow-text">Brussels</span>
+</div>
+<h1 class="hero-name">
+<span class="firstname">Antonin</span>
+<span class="lastname">Bareau</span>
+</h1>
+<div class="hero-pills" data-lang="fr">
+<span class="pill">Référent IA</span>
+<span class="pill">Conseiller techno-pédagogique</span>
+<span class="pill">Formateur</span>
+<span class="pill">Enseignant</span>
+</div>
+<div class="hero-pills" data-lang="en">
+<span class="pill">AI Advisor</span>
+<span class="pill">EdTech Consultant</span>
+<span class="pill">Trainer</span>
+<span class="pill">Teacher</span>
+</div>
+<p class="hero-tagline" data-lang="fr">
+        Je construis les ponts entre la pédagogie,<br/>le numérique et les enseignants.
       </p>
-      <p class="hero-tagline" data-lang="en">
-        I build bridges between pedagogy,<br>technology, and teachers.
+<p class="hero-tagline" data-lang="en">
+        I build bridges between pedagogy,<br/>technology, and teachers.
       </p>
-
-      <div class="hero-contacts" data-lang="fr">
-        <a class="contact-link" href="mailto:a.bareau@crbtp.be">
-          <span class="c-icon">✉</span>
-          <span>a.bareau@crbtp.be</span>
-        </a>
-        <a class="contact-link" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">
-          <span class="c-icon">in</span>
-          <span>LinkedIn</span>
-        </a>
-      </div>
-      <div class="hero-contacts" data-lang="en">
-        <a class="contact-link" href="mailto:a.bareau@crbtp.be">
-          <span class="c-icon">✉</span>
-          <span>a.bareau@crbtp.be</span>
-        </a>
-        <a class="contact-link" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">
-          <span class="c-icon">in</span>
-          <span>LinkedIn</span>
-        </a>
-      </div>
-
-    </div>
-
-    <!-- Photo panel -->
-    <div class="photo-panel">
-      <div class="photo-circle-deco"></div>
-      <img src="Photo_Anto.png.png" alt="Antonin Bareau" class="hero-photo">
-      <div class="photo-badge" data-lang="fr">20 ans · même école</div>
-      <div class="photo-badge" data-lang="en">20 years · same school</div>
-    </div>
-  </section>
-
-  <!-- ══ NARRATIVE ══ -->
-  <div class="narrative">
-    <p data-lang="fr">
-      <strong>20 ans dans la même école. Pas par inertie — par choix.</strong><br>
+<div class="hero-contacts" data-lang="fr">
+<a class="contact-link" href="mailto:a.bareau@crbtp.be">
+<span class="c-icon">✉</span>
+<span>a.bareau@crbtp.be</span>
+</a>
+<a class="contact-link" href="https://www.linkedin.com/in/" rel="noopener" target="_blank">
+<span class="c-icon">in</span>
+<span>LinkedIn</span>
+</a>
+</div>
+<div class="hero-contacts" data-lang="en">
+<a class="contact-link" href="mailto:a.bareau@crbtp.be">
+<span class="c-icon">✉</span>
+<span>a.bareau@crbtp.be</span>
+</a>
+<a class="contact-link" href="https://www.linkedin.com/in/" rel="noopener" target="_blank">
+<span class="c-icon">in</span>
+<span>LinkedIn</span>
+</a>
+</div>
+</div>
+<!-- Photo panel -->
+<div class="photo-panel">
+<div class="photo-circle-deco"></div>
+<img alt="Antonin Bareau" class="hero-photo" src="Photo_Anto.png.png"/>
+<div class="photo-badge" data-lang="fr">20 ans · même école</div>
+<div class="photo-badge" data-lang="en">20 years · same school</div>
+</div>
+</section>
+<!-- ══ NARRATIVE ══ -->
+<div class="narrative">
+<p data-lang="fr">
+<strong>20 ans dans la même école. Pas par inertie — par choix.</strong><br/>
       Parce que transformer une institution de l'intérieur est autrement plus difficile — et satisfaisant — que de changer de poste.
       J'ai accompagné le passage du papier au cloud, des cours magistraux à la classe inversée,
       et maintenant de l'éducation traditionnelle à l'ère de l'IA.
       À chaque étape, j'ai <strong>formé, outillé, convaincu</strong>.
     </p>
-    <p data-lang="en">
-      <strong>20 years in the same school. Not out of inertia — by choice.</strong><br>
+<p data-lang="en">
+<strong>20 years in the same school. Not out of inertia — by choice.</strong><br/>
       Because transforming an institution from within is far more challenging — and rewarding — than switching jobs.
       I've guided the shift from paper to cloud, from lectures to flipped classrooms,
       and now from traditional education to the AI era.
       At every step, I <strong>trained, equipped, and convinced</strong>.
     </p>
-  </div>
-
-  <!-- ══ EXPÉRIENCE ══ -->
-  <div class="sep"><span class="sep-icon">❧</span></div>
-  <section class="section" style="padding-bottom: 8px;">
-    <div class="section-head">
-      <span class="sec-num">01</span>
-      <h2 class="sec-title" data-lang="fr">Expérience</h2>
-      <h2 class="sec-title" data-lang="en">Experience</h2>
-    </div>
-
-    <div class="timeline">
-
-      <div class="timeline-controls">
-        <button class="t-toggle-all" id="toggleAllBtn" onclick="toggleAll()" data-lang="fr">Tout déplier</button>
-        <button class="t-toggle-all" id="toggleAllBtnEn" onclick="toggleAll()" data-lang="en">Expand all</button>
-      </div>
-
-      <div class="t-item collapsed">
-        <div class="t-dot"></div>
-        <div class="t-header" onclick="toggleItem(this)">
-          <div class="t-header-meta">
-            <div class="t-period" data-lang="fr">Août 2025 → aujourd'hui</div>
-            <div class="t-period" data-lang="en">Aug 2025 → Present</div>
-            <div class="t-role" data-lang="fr">Référent IA</div>
-            <div class="t-role" data-lang="en">AI Advisor</div>
-            <div class="t-org">CRBTP · Bruxelles</div>
-          </div>
-          <span class="t-chevron">▾</span>
-        </div>
-        <div class="t-body">
-          <div class="t-points" data-lang="fr">
-            <div class="t-point">Former et accompagner les enseignants à l'usage éthique et pédagogique de l'IA — de l'angoisse à la maîtrise.</div>
-            <div class="t-point">Coordonner la rédaction d'un cadre d'usage IA pour l'établissement — gouvernance numérique.</div>
-            <div class="t-point">Concevoir des outils et automatisations pour libérer du temps enseignant sur les tâches à faible valeur ajoutée.</div>
-          </div>
-          <div class="t-points" data-lang="en">
-            <div class="t-point">Train and support teachers in the ethical and pedagogical use of AI — from anxiety to mastery.</div>
-            <div class="t-point">Coordinate the drafting of an institutional AI usage framework — digital governance.</div>
-            <div class="t-point">Design tools and automations to free up teacher time from low-value tasks.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="t-item collapsed">
-        <div class="t-dot"></div>
-        <div class="t-header" onclick="toggleItem(this)">
-          <div class="t-header-meta">
-            <div class="t-period" data-lang="fr">Août 2025 → aujourd'hui</div>
-            <div class="t-period" data-lang="en">Aug 2025 → Present</div>
-            <div class="t-role" data-lang="fr">Formateur externe</div>
-            <div class="t-role" data-lang="en">External Trainer</div>
-            <div class="t-org">Pedagokit · Edulab</div>
-          </div>
-          <span class="t-chevron">▾</span>
-        </div>
-        <div class="t-body">
-          <div class="t-points" data-lang="fr">
-            <div class="t-point">Contenu interactif</div>
-            <div class="t-point">STEAM et IA</div>
-            <div class="t-point">IA et créativité</div>
-            <div class="t-point">NotebookLM et Gems</div>
-            <div class="t-point">Refonte du nouveau parcours référent IA avec Edulab</div>
-          </div>
-          <div class="t-points" data-lang="en">
-            <div class="t-point">Interactive Content</div>
-            <div class="t-point">STEAM & AI</div>
-            <div class="t-point">AI & Creativity</div>
-            <div class="t-point">NotebookLM & Gems</div>
-            <div class="t-point">Redesign of the new AI advisor training with Edulab</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="t-item collapsed">
-        <div class="t-dot"></div>
-        <div class="t-header" onclick="toggleItem(this)">
-          <div class="t-header-meta">
-            <div class="t-period" data-lang="fr">Sept. 2019 → aujourd'hui</div>
-            <div class="t-period" data-lang="en">Sept 2019 → Present</div>
-            <div class="t-role" data-lang="fr">Référent numérique & Conseiller techno-pédagogique</div>
-            <div class="t-role" data-lang="en">Digital Advisor & EdTech Consultant</div>
-            <div class="t-org">CRBTP · Bruxelles</div>
-          </div>
-          <span class="t-chevron">▾</span>
-        </div>
-        <div class="t-body">
-          <div class="t-points" data-lang="fr">
-            <div class="t-point">Piloter la transition numérique complète (1:1, Intune, migration Google → Microsoft 365).</div>
-            <div class="t-point">Former l'ensemble du personnel enseignant et administratif — sans laisser personne sur le carreau.</div>
-            <div class="t-point">Administrer Teams, M365 et la plateforme Pix. Gérer la stratégie de communication numérique.</div>
-            <div class="t-point">Produire de nombreuses ressources numériques pédagogiques partagées sur LinkedIn et dans la communauté éducative.</div>
-          </div>
-          <div class="t-points" data-lang="en">
-            <div class="t-point">Lead the complete digital transition (1:1, Intune, Google → Microsoft 365 migration).</div>
-            <div class="t-point">Train all teaching and administrative staff — leaving no one behind.</div>
-            <div class="t-point">Administer Teams, M365 and the Pix platform. Manage the school's digital communication strategy.</div>
-            <div class="t-point">Produce extensive educational digital resources shared on LinkedIn and in the teaching community.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="t-item collapsed">
-        <div class="t-dot"></div>
-        <div class="t-header" onclick="toggleItem(this)">
-          <div class="t-header-meta">
-            <div class="t-period" data-lang="fr">Sept. 2004 → aujourd'hui</div>
-            <div class="t-period" data-lang="en">Sept 2004 → Present</div>
-            <div class="t-role" data-lang="fr">Enseignant (FSE / Français / FHG / Expression orale)</div>
-            <div class="t-role" data-lang="en">Teacher (Social Sciences / French / History / Oral Expression)</div>
-            <div class="t-org">CRBTP · Bruxelles</div>
-          </div>
-          <span class="t-chevron">▾</span>
-        </div>
-        <div class="t-body">
-          <div class="t-points" data-lang="fr">
-            <div class="t-point">20 ans d'enseignement auprès d'apprenants de 15 à 25 ans en formation professionnelle — un public exigeant qui oblige à se remettre en cause et évoluer constamment.</div>
-            <div class="t-point">Pionnier de la classe inversée : création de dizaines de vidéos pédagogiques, outils d'évaluation gamifiés, feedback immédiat.</div>
-            <div class="t-point">Approche pédagogique inspirée par les 4 piliers de l'apprentissage (Dehaene) et les plans de travail.</div>
-          </div>
-          <div class="t-points" data-lang="en">
-            <div class="t-point">20 years teaching 15–25 year-olds in vocational training — a demanding audience that forces you to question yourself and keep evolving.</div>
-            <div class="t-point">Pioneer of the flipped classroom: dozens of instructional videos, gamified assessment tools, immediate feedback.</div>
-            <div class="t-point">Pedagogical approach inspired by the 4 pillars of learning (Dehaene) and self-directed work plans.</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══ COMPÉTENCES ══ -->
-  <div class="sep"><span class="sep-icon">✿</span></div>
-  <section class="section">
-    <div class="section-head">
-      <span class="sec-num">02</span>
-      <h2 class="sec-title" data-lang="fr">Compétences</h2>
-      <h2 class="sec-title" data-lang="en">Skills</h2>
-    </div>
-
-    <!-- FR -->
-    <div class="skills-grid" data-lang="fr">
-      <div class="sk-card" onclick="openModal('sk1','fr')">
-        <span class="sk-icon">🎓</span>
-        <span class="sk-name">Formation & accompagnement</span>
-        <span class="sk-hint">En savoir plus</span>
-      </div>
-      <div class="sk-card" onclick="openModal('sk2','fr')">
-        <span class="sk-icon">🤖</span>
-        <span class="sk-name">Utilisation avancée de l'IA</span>
-        <span class="sk-hint">En savoir plus</span>
-      </div>
-      <div class="sk-card" onclick="openModal('sk3','fr')">
-        <span class="sk-icon">🎬</span>
-        <span class="sk-name">Supports pédagogiques numériques</span>
-        <span class="sk-hint">En savoir plus</span>
-      </div>
-      <div class="sk-card" onclick="openModal('sk4','fr')">
-        <span class="sk-icon">✍️</span>
-        <span class="sk-name">Production de contenu</span>
-        <span class="sk-hint">En savoir plus</span>
-      </div>
-      <div class="sk-card" onclick="openModal('sk5','fr')">
-        <span class="sk-icon">📊</span>
-        <span class="sk-name">Analyse de données</span>
-        <span class="sk-hint">En savoir plus</span>
-      </div>
-      <div class="sk-card" onclick="openModal('sk6','fr')">
-        <span class="sk-icon">🔄</span>
-        <span class="sk-name">Gestion du changement</span>
-        <span class="sk-hint">En savoir plus</span>
-      </div>
-      <div class="sk-card" onclick="openModal('sk7','fr')">
-        <span class="sk-icon">⚙️</span>
-        <span class="sk-name">Optimisation administrative</span>
-        <span class="sk-hint">En savoir plus</span>
-      </div>
-      <div class="sk-card" onclick="openModal('sk8','fr')">
-        <span class="sk-icon">🏫</span>
-        <span class="sk-name">Administrateur ENT</span>
-        <span class="sk-hint">En savoir plus</span>
-      </div>
-    </div>
-
-    <!-- EN -->
-    <div class="skills-grid" data-lang="en">
-      <div class="sk-card" onclick="openModal('sk1','en')">
-        <span class="sk-icon">🎓</span>
-        <span class="sk-name">Training & Teacher Support</span>
-        <span class="sk-hint">Learn more</span>
-      </div>
-      <div class="sk-card" onclick="openModal('sk2','en')">
-        <span class="sk-icon">🤖</span>
-        <span class="sk-name">Advanced AI Use</span>
-        <span class="sk-hint">Learn more</span>
-      </div>
-      <div class="sk-card" onclick="openModal('sk3','en')">
-        <span class="sk-icon">🎬</span>
-        <span class="sk-name">Digital Learning Content</span>
-        <span class="sk-hint">Learn more</span>
-      </div>
-      <div class="sk-card" onclick="openModal('sk4','en')">
-        <span class="sk-icon">✍️</span>
-        <span class="sk-name">Content Writing & Production</span>
-        <span class="sk-hint">Learn more</span>
-      </div>
-      <div class="sk-card" onclick="openModal('sk5','en')">
-        <span class="sk-icon">📊</span>
-        <span class="sk-name">Data Analysis</span>
-        <span class="sk-hint">Learn more</span>
-      </div>
-      <div class="sk-card" onclick="openModal('sk6','en')">
-        <span class="sk-icon">🔄</span>
-        <span class="sk-name">Change Management</span>
-        <span class="sk-hint">Learn more</span>
-      </div>
-      <div class="sk-card" onclick="openModal('sk7','en')">
-        <span class="sk-icon">⚙️</span>
-        <span class="sk-name">Workflow Optimization</span>
-        <span class="sk-hint">Learn more</span>
-      </div>
-      <div class="sk-card" onclick="openModal('sk8','en')">
-        <span class="sk-icon">🏫</span>
-        <span class="sk-name">LMS Administrator</span>
-        <span class="sk-hint">Learn more</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ FORMATIONS ══ -->
-  <!-- ══ FORMATIONS ══ -->
-  <div class="sep"><span class="sep-icon">❀</span></div>
-  <section class="section">
-    <div class="section-head">
-      <span class="sec-num">03</span>
-      <h2 class="sec-title" data-lang="fr">Formations</h2>
-      <h2 class="sec-title" data-lang="en">Education</h2>
-    </div>
-
-    <div class="training-grid" data-lang="fr">
-      <div class="tr-item">
-        <span class="tr-year">ULB</span>
-        <div><div class="tr-label">Licence en droit</div><div class="tr-inst">Université Libre de Bruxelles</div></div>
-      </div>
-      <div class="tr-item">
-        <span class="tr-year">CAP</span>
-        <div><div class="tr-label">Certificat d'aptitude pédagogique</div><div class="tr-inst">Institut Roger Guilbert</div></div>
-      </div>
-      <div class="tr-item">
-        <span class="tr-year">PNL</span>
-        <div><div class="tr-label">Praticien en PNL</div><div class="tr-inst">CFIP</div></div>
-      </div>
-      <div class="tr-item">
-        <span class="tr-year">NUM</span>
-        <div><div class="tr-label">E-référent</div><div class="tr-inst">IFEC</div></div>
-      </div>
-      <div class="tr-item">
-        <span class="tr-year">MGT</span>
-        <div><div class="tr-label">Gestion du changement</div><div class="tr-inst">CFIP</div></div>
-      </div>
-      <div class="tr-item">
-        <span class="tr-year">EDU</span>
-        <div><div class="tr-label">Conseiller techno-pédagogique</div><div class="tr-inst">CPFB</div></div>
-      </div>
-      <div class="tr-item">
-        <span class="tr-year">IA</span>
-        <div><div class="tr-label">Référent IA</div><div class="tr-inst">Edulab</div></div>
-      </div>
-    </div>
-
-    <div class="training-grid" data-lang="en">
-      <div class="tr-item">
-        <span class="tr-year">ULB</span>
-        <div><div class="tr-label">Law Degree</div><div class="tr-inst">Université Libre de Bruxelles</div></div>
-      </div>
-      <div class="tr-item">
-        <span class="tr-year">CAP</span>
-        <div><div class="tr-label">Teaching Aptitude Certificate</div><div class="tr-inst">Institut Roger Guilbert</div></div>
-      </div>
-      <div class="tr-item">
-        <span class="tr-year">NLP</span>
-        <div><div class="tr-label">NLP Practitioner</div><div class="tr-inst">CFIP</div></div>
-      </div>
-      <div class="tr-item">
-        <span class="tr-year">DIG</span>
-        <div><div class="tr-label">Digital Advisor</div><div class="tr-inst">IFEC</div></div>
-      </div>
-      <div class="tr-item">
-        <span class="tr-year">MGT</span>
-        <div><div class="tr-label">Change Management</div><div class="tr-inst">CFIP</div></div>
-      </div>
-      <div class="tr-item">
-        <span class="tr-year">EDU</span>
-        <div><div class="tr-label">EdTech Consultant</div><div class="tr-inst">CPFB</div></div>
-      </div>
-      <div class="tr-item">
-        <span class="tr-year">AI</span>
-        <div><div class="tr-label">AI Advisor Certification</div><div class="tr-inst">Edulab</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ QUALITÉS ══ -->
-  <div class="sep"><span class="sep-icon">✦</span></div>
-  <section class="section">
-    <div class="section-head">
-      <span class="sec-num">04</span>
-      <h2 class="sec-title" data-lang="fr">Qualités</h2>
-      <h2 class="sec-title" data-lang="en">Qualities</h2>
-    </div>
-
-    <div class="qualities-grid" data-lang="fr">
-      <div class="q-card"><span class="q-dot"></span><span class="q-label">Curiosité</span></div>
-      <div class="q-card"><span class="q-dot"></span><span class="q-label">Autonomie</span></div>
-      <div class="q-card"><span class="q-dot"></span><span class="q-label">Travail & esprit d'équipe</span></div>
-      <div class="q-card"><span class="q-dot"></span><span class="q-label">Créativité</span></div>
-      <div class="q-card"><span class="q-dot"></span><span class="q-label">Organisation</span></div>
-      <div class="q-card"><span class="q-dot"></span><span class="q-label">Orienté résultats</span></div>
-    </div>
-    <div class="qualities-grid" data-lang="en">
-      <div class="q-card"><span class="q-dot"></span><span class="q-label">Curiosity</span></div>
-      <div class="q-card"><span class="q-dot"></span><span class="q-label">Autonomy</span></div>
-      <div class="q-card"><span class="q-dot"></span><span class="q-label">Teamwork & Work ethic</span></div>
-      <div class="q-card"><span class="q-dot"></span><span class="q-label">Creativity</span></div>
-      <div class="q-card"><span class="q-dot"></span><span class="q-label">Organisation</span></div>
-      <div class="q-card"><span class="q-dot"></span><span class="q-label">Results-oriented</span></div>
-    </div>
-  </section>
-
-  <!-- ══ AU-DELÀ ══ -->
-  <div class="sep"><span class="sep-icon">⚘</span></div>
-  <div class="beyond-block">
-    <div class="sec-title" data-lang="fr">Au-delà du CV</div>
-    <div class="sec-title" data-lang="en">Beyond the CV</div>
-    <p data-lang="fr">
+</div>
+<!-- ══ EXPÉRIENCE ══ -->
+<div class="sep"><span class="sep-icon">❧</span></div>
+<section class="section" style="padding-bottom: 8px;">
+<div class="section-head">
+<span class="sec-num">01</span>
+<h2 class="sec-title" data-lang="fr">Expérience</h2>
+<h2 class="sec-title" data-lang="en">Experience</h2>
+</div>
+<div class="timeline">
+<div class="timeline-controls">
+<button class="t-toggle-all" data-lang="fr" id="toggleAllBtn" onclick="toggleAll()">Tout déplier</button>
+<button class="t-toggle-all" data-lang="en" id="toggleAllBtnEn" onclick="toggleAll()">Expand all</button>
+</div>
+<div class="t-item collapsed">
+<div class="t-dot"></div>
+<div class="t-header" onclick="toggleItem(this)">
+<div class="t-header-meta">
+<div class="t-period" data-lang="fr">Août 2025 → aujourd'hui</div>
+<div class="t-period" data-lang="en">Aug 2025 → Present</div>
+<div class="t-role" data-lang="fr">Référent IA</div>
+<div class="t-role" data-lang="en">AI Advisor</div>
+<div class="t-org">CRBTP · Bruxelles</div>
+</div>
+<span class="t-chevron">▾</span>
+</div>
+<div class="t-body">
+<div class="t-points" data-lang="fr">
+<div class="t-point">Former et accompagner les enseignants à l'usage éthique et pédagogique de l'IA — de l'angoisse à la maîtrise.</div>
+<div class="t-point">Coordonner la rédaction d'un cadre d'usage IA pour l'établissement — gouvernance numérique.</div>
+<div class="t-point">Concevoir des outils et automatisations pour libérer du temps enseignant sur les tâches à faible valeur ajoutée.</div>
+</div>
+<div class="t-points" data-lang="en">
+<div class="t-point">Train and support teachers in the ethical and pedagogical use of AI — from anxiety to mastery.</div>
+<div class="t-point">Coordinate the drafting of an institutional AI usage framework — digital governance.</div>
+<div class="t-point">Design tools and automations to free up teacher time from low-value tasks.</div>
+</div>
+</div>
+</div>
+<div class="t-item collapsed">
+<div class="t-dot"></div>
+<div class="t-header" onclick="toggleItem(this)">
+<div class="t-header-meta">
+<div class="t-period" data-lang="fr">Août 2025 → aujourd'hui</div>
+<div class="t-period" data-lang="en">Aug 2025 → Present</div>
+<div class="t-role" data-lang="fr">Formateur externe</div>
+<div class="t-role" data-lang="en">External Trainer</div>
+<div class="t-org">Pedagokit · Edulab</div>
+</div>
+<span class="t-chevron">▾</span>
+</div>
+<div class="t-body">
+<div class="t-points" data-lang="fr">
+<div class="t-point">Contenu interactif</div>
+<div class="t-point">STEAM et IA</div>
+<div class="t-point">IA et créativité</div>
+<div class="t-point">NotebookLM et Gems</div>
+<div class="t-point">Refonte du nouveau parcours référent IA avec Edulab</div>
+</div>
+<div class="t-points" data-lang="en">
+<div class="t-point">Interactive Content</div>
+<div class="t-point">STEAM &amp; AI</div>
+<div class="t-point">AI &amp; Creativity</div>
+<div class="t-point">NotebookLM &amp; Gems</div>
+<div class="t-point">Redesign of the new AI advisor training with Edulab</div>
+</div>
+</div>
+</div>
+<div class="t-item collapsed">
+<div class="t-dot"></div>
+<div class="t-header" onclick="toggleItem(this)">
+<div class="t-header-meta">
+<div class="t-period" data-lang="fr">Sept. 2019 → aujourd'hui</div>
+<div class="t-period" data-lang="en">Sept 2019 → Present</div>
+<div class="t-role" data-lang="fr">Référent numérique &amp; Conseiller techno-pédagogique</div>
+<div class="t-role" data-lang="en">Digital Advisor &amp; EdTech Consultant</div>
+<div class="t-org">CRBTP · Bruxelles</div>
+</div>
+<span class="t-chevron">▾</span>
+</div>
+<div class="t-body">
+<div class="t-points" data-lang="fr">
+<div class="t-point">Piloter la transition numérique complète (1:1, Intune, migration Google → Microsoft 365).</div>
+<div class="t-point">Former l'ensemble du personnel enseignant et administratif — sans laisser personne sur le carreau.</div>
+<div class="t-point">Administrer Teams, M365 et la plateforme Pix. Gérer la stratégie de communication numérique.</div>
+<div class="t-point">Produire de nombreuses ressources numériques pédagogiques partagées sur LinkedIn et dans la communauté éducative.</div>
+</div>
+<div class="t-points" data-lang="en">
+<div class="t-point">Lead the complete digital transition (1:1, Intune, Google → Microsoft 365 migration).</div>
+<div class="t-point">Train all teaching and administrative staff — leaving no one behind.</div>
+<div class="t-point">Administer Teams, M365 and the Pix platform. Manage the school's digital communication strategy.</div>
+<div class="t-point">Produce extensive educational digital resources shared on LinkedIn and in the teaching community.</div>
+</div>
+</div>
+</div>
+<div class="t-item collapsed">
+<div class="t-dot"></div>
+<div class="t-header" onclick="toggleItem(this)">
+<div class="t-header-meta">
+<div class="t-period" data-lang="fr">Sept. 2004 → aujourd'hui</div>
+<div class="t-period" data-lang="en">Sept 2004 → Present</div>
+<div class="t-role" data-lang="fr">Enseignant (FSE / Français / FHG / Expression orale)</div>
+<div class="t-role" data-lang="en">Teacher (Social Sciences / French / History / Oral Expression)</div>
+<div class="t-org">CRBTP · Bruxelles</div>
+</div>
+<span class="t-chevron">▾</span>
+</div>
+<div class="t-body">
+<div class="t-points" data-lang="fr">
+<div class="t-point">20 ans d'enseignement auprès d'apprenants de 15 à 25 ans en formation professionnelle — un public exigeant qui oblige à se remettre en cause et évoluer constamment.</div>
+<div class="t-point">Pionnier de la classe inversée : création de dizaines de vidéos pédagogiques, outils d'évaluation gamifiés, feedback immédiat.</div>
+<div class="t-point">Approche pédagogique inspirée par les 4 piliers de l'apprentissage (Dehaene) et les plans de travail.</div>
+</div>
+<div class="t-points" data-lang="en">
+<div class="t-point">20 years teaching 15–25 year-olds in vocational training — a demanding audience that forces you to question yourself and keep evolving.</div>
+<div class="t-point">Pioneer of the flipped classroom: dozens of instructional videos, gamified assessment tools, immediate feedback.</div>
+<div class="t-point">Pedagogical approach inspired by the 4 pillars of learning (Dehaene) and self-directed work plans.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ══ COMPÉTENCES ══ -->
+<div class="sep"><span class="sep-icon">✿</span></div>
+<section class="section">
+<div class="section-head">
+<span class="sec-num">02</span>
+<h2 class="sec-title" data-lang="fr">Compétences</h2>
+<h2 class="sec-title" data-lang="en">Skills</h2>
+</div>
+<!-- FR -->
+<div class="skills-grid" data-lang="fr">
+<div class="sk-card" onclick="openModal('sk1','fr')">
+<span class="sk-icon">🎓</span>
+<span class="sk-name">Formation &amp; accompagnement</span>
+<span class="sk-hint">En savoir plus</span>
+</div>
+<div class="sk-card" onclick="openModal('sk2','fr')">
+<span class="sk-icon">🤖</span>
+<span class="sk-name">Utilisation avancée de l'IA</span>
+<span class="sk-hint">En savoir plus</span>
+</div>
+<div class="sk-card" onclick="openModal('sk3','fr')">
+<span class="sk-icon">🎬</span>
+<span class="sk-name">Supports pédagogiques numériques</span>
+<span class="sk-hint">En savoir plus</span>
+</div>
+<div class="sk-card" onclick="openModal('sk4','fr')">
+<span class="sk-icon">✍️</span>
+<span class="sk-name">Production de contenu</span>
+<span class="sk-hint">En savoir plus</span>
+</div>
+<div class="sk-card" onclick="openModal('sk5','fr')">
+<span class="sk-icon">📊</span>
+<span class="sk-name">Analyse de données</span>
+<span class="sk-hint">En savoir plus</span>
+</div>
+<div class="sk-card" onclick="openModal('sk6','fr')">
+<span class="sk-icon">🔄</span>
+<span class="sk-name">Gestion du changement</span>
+<span class="sk-hint">En savoir plus</span>
+</div>
+<div class="sk-card" onclick="openModal('sk7','fr')">
+<span class="sk-icon">⚙️</span>
+<span class="sk-name">Optimisation administrative</span>
+<span class="sk-hint">En savoir plus</span>
+</div>
+<div class="sk-card" onclick="openModal('sk8','fr')">
+<span class="sk-icon">🏫</span>
+<span class="sk-name">Administrateur ENT</span>
+<span class="sk-hint">En savoir plus</span>
+</div>
+</div>
+<!-- EN -->
+<div class="skills-grid" data-lang="en">
+<div class="sk-card" onclick="openModal('sk1','en')">
+<span class="sk-icon">🎓</span>
+<span class="sk-name">Training &amp; Teacher Support</span>
+<span class="sk-hint">Learn more</span>
+</div>
+<div class="sk-card" onclick="openModal('sk2','en')">
+<span class="sk-icon">🤖</span>
+<span class="sk-name">Advanced AI Use</span>
+<span class="sk-hint">Learn more</span>
+</div>
+<div class="sk-card" onclick="openModal('sk3','en')">
+<span class="sk-icon">🎬</span>
+<span class="sk-name">Digital Learning Content</span>
+<span class="sk-hint">Learn more</span>
+</div>
+<div class="sk-card" onclick="openModal('sk4','en')">
+<span class="sk-icon">✍️</span>
+<span class="sk-name">Content Writing &amp; Production</span>
+<span class="sk-hint">Learn more</span>
+</div>
+<div class="sk-card" onclick="openModal('sk5','en')">
+<span class="sk-icon">📊</span>
+<span class="sk-name">Data Analysis</span>
+<span class="sk-hint">Learn more</span>
+</div>
+<div class="sk-card" onclick="openModal('sk6','en')">
+<span class="sk-icon">🔄</span>
+<span class="sk-name">Change Management</span>
+<span class="sk-hint">Learn more</span>
+</div>
+<div class="sk-card" onclick="openModal('sk7','en')">
+<span class="sk-icon">⚙️</span>
+<span class="sk-name">Workflow Optimization</span>
+<span class="sk-hint">Learn more</span>
+</div>
+<div class="sk-card" onclick="openModal('sk8','en')">
+<span class="sk-icon">🏫</span>
+<span class="sk-name">LMS Administrator</span>
+<span class="sk-hint">Learn more</span>
+</div>
+</div>
+</section>
+<!-- ══ FORMATIONS ══ -->
+<!-- ══ FORMATIONS ══ -->
+<div class="sep"><span class="sep-icon">❀</span></div>
+<section class="section">
+<div class="section-head">
+<span class="sec-num">03</span>
+<h2 class="sec-title" data-lang="fr">Formations</h2>
+<h2 class="sec-title" data-lang="en">Education</h2>
+</div>
+<div class="training-grid" data-lang="fr">
+<div class="tr-item">
+<span class="tr-year">ULB</span>
+<div><div class="tr-label">Licence en droit</div><div class="tr-inst">Université Libre de Bruxelles</div></div>
+</div>
+<div class="tr-item">
+<span class="tr-year">CAP</span>
+<div><div class="tr-label">Certificat d'aptitude pédagogique</div><div class="tr-inst">Institut Roger Guilbert</div></div>
+</div>
+<div class="tr-item">
+<span class="tr-year">PNL</span>
+<div><div class="tr-label">Praticien en PNL</div><div class="tr-inst">CFIP</div></div>
+</div>
+<div class="tr-item">
+<span class="tr-year">NUM</span>
+<div><div class="tr-label">E-référent</div><div class="tr-inst">IFEC</div></div>
+</div>
+<div class="tr-item">
+<span class="tr-year">MGT</span>
+<div><div class="tr-label">Gestion du changement</div><div class="tr-inst">CFIP</div></div>
+</div>
+<div class="tr-item">
+<span class="tr-year">EDU</span>
+<div><div class="tr-label">Conseiller techno-pédagogique</div><div class="tr-inst">CPFB</div></div>
+</div>
+<div class="tr-item">
+<span class="tr-year">IA</span>
+<div><div class="tr-label">Référent IA</div><div class="tr-inst">Edulab</div></div>
+</div>
+</div>
+<div class="training-grid" data-lang="en">
+<div class="tr-item">
+<span class="tr-year">ULB</span>
+<div><div class="tr-label">Law Degree</div><div class="tr-inst">Université Libre de Bruxelles</div></div>
+</div>
+<div class="tr-item">
+<span class="tr-year">CAP</span>
+<div><div class="tr-label">Teaching Aptitude Certificate</div><div class="tr-inst">Institut Roger Guilbert</div></div>
+</div>
+<div class="tr-item">
+<span class="tr-year">NLP</span>
+<div><div class="tr-label">NLP Practitioner</div><div class="tr-inst">CFIP</div></div>
+</div>
+<div class="tr-item">
+<span class="tr-year">DIG</span>
+<div><div class="tr-label">Digital Advisor</div><div class="tr-inst">IFEC</div></div>
+</div>
+<div class="tr-item">
+<span class="tr-year">MGT</span>
+<div><div class="tr-label">Change Management</div><div class="tr-inst">CFIP</div></div>
+</div>
+<div class="tr-item">
+<span class="tr-year">EDU</span>
+<div><div class="tr-label">EdTech Consultant</div><div class="tr-inst">CPFB</div></div>
+</div>
+<div class="tr-item">
+<span class="tr-year">AI</span>
+<div><div class="tr-label">AI Advisor Certification</div><div class="tr-inst">Edulab</div></div>
+</div>
+</div>
+</section>
+<!-- ══ QUALITÉS ══ -->
+<div class="sep"><span class="sep-icon">✦</span></div>
+<section class="section">
+<div class="section-head">
+<span class="sec-num">04</span>
+<h2 class="sec-title" data-lang="fr">Qualités</h2>
+<h2 class="sec-title" data-lang="en">Qualities</h2>
+</div>
+<div class="qualities-grid" data-lang="fr">
+<div class="q-card"><span class="q-dot"></span><span class="q-label">Curiosité</span></div>
+<div class="q-card"><span class="q-dot"></span><span class="q-label">Autonomie</span></div>
+<div class="q-card"><span class="q-dot"></span><span class="q-label">Travail &amp; esprit d'équipe</span></div>
+<div class="q-card"><span class="q-dot"></span><span class="q-label">Créativité</span></div>
+<div class="q-card"><span class="q-dot"></span><span class="q-label">Organisation</span></div>
+<div class="q-card"><span class="q-dot"></span><span class="q-label">Orienté résultats</span></div>
+</div>
+<div class="qualities-grid" data-lang="en">
+<div class="q-card"><span class="q-dot"></span><span class="q-label">Curiosity</span></div>
+<div class="q-card"><span class="q-dot"></span><span class="q-label">Autonomy</span></div>
+<div class="q-card"><span class="q-dot"></span><span class="q-label">Teamwork &amp; Work ethic</span></div>
+<div class="q-card"><span class="q-dot"></span><span class="q-label">Creativity</span></div>
+<div class="q-card"><span class="q-dot"></span><span class="q-label">Organisation</span></div>
+<div class="q-card"><span class="q-dot"></span><span class="q-label">Results-oriented</span></div>
+</div>
+</section>
+<!-- ══ AU-DELÀ ══ -->
+<div class="sep"><span class="sep-icon">⚘</span></div>
+<div class="beyond-block">
+<div class="sec-title" data-lang="fr">Au-delà du CV</div>
+<div class="sec-title" data-lang="en">Beyond the CV</div>
+<p data-lang="fr">
       Apprendre, lire, dessiner, fitness, méditation, auto-hypnose.
       Et faire grandir <strong>deux filles merveilleuses</strong> — ce qui reste mon projet pédagogique le plus ambitieux.
     </p>
-    <p data-lang="en">
+<p data-lang="en">
       Learning, reading, drawing, fitness, meditation, self-hypnosis.
       And raising <strong>two wonderful daughters</strong> — which remains my most ambitious pedagogical project.
     </p>
-  </div>
-
-  <!-- ══ FOOTER ══ -->
-  <footer>
-    <span class="footer-name">Antonin Bareau</span>
-    <span class="footer-note" data-lang="fr">Bruxelles · 2025</span>
-    <span class="footer-note" data-lang="en">Brussels · 2025</span>
-    <a class="footer-cta" href="mailto:a.bareau@crbtp.be">
-      <span class="fc-label" data-lang="fr">Me contacter</span>
-      <span class="fc-label" data-lang="en">Get in touch</span>
-      <span class="fc-icon">→</span>
-    </a>
-  </footer>
-
-<div class="ab-attribution" style="text-align:center;margin-top:2rem;padding-top:1rem;border-top:1px solid rgba(128,128,128,0.25);font-size:0.8rem;opacity:0.65;">
-  <a href="https://www.linkedin.com/in/antonin-bareau/" target="_blank" rel="noopener" style="font-weight:bold;color:inherit;text-decoration:none;">Antonin Bareau</a>
-  &nbsp;&mdash;&nbsp;
-  <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Licence CC BY-SA 4.0</a>
 </div>
-</div><!-- /page-frame -->
-
+<!-- ══ FOOTER ══ -->
+<footer>
+<span class="footer-name">Antonin Bareau</span>
+<span class="footer-note" data-lang="fr">Bruxelles · 2025</span>
+<span class="footer-note" data-lang="en">Brussels · 2025</span>
+<a class="footer-cta" href="mailto:a.bareau@crbtp.be">
+<span class="fc-label" data-lang="fr">Me contacter</span>
+<span class="fc-label" data-lang="en">Get in touch</span>
+<span class="fc-icon">→</span>
+</a>
+</footer>
+<div class="ab-attribution" style="text-align:center;margin-top:2rem;padding-top:1rem;border-top:1px solid rgba(128,128,128,0.25);font-size:0.8rem;opacity:0.65;">
+<a href="https://www.linkedin.com/in/antonin-bareau/" rel="noopener" style="font-weight:bold;color:inherit;text-decoration:none;" target="_blank">Antonin Bareau</a>
+   — 
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener" style="color:inherit;text-decoration:none;" target="_blank">Licence CC BY-SA 4.0</a>
+</div></div><!-- /page-frame -->
 <script>
 // ── SKILL DATA ──
 const skills = {
@@ -1501,6 +1468,5 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.t-item').forEach(el => observer.observe(el));
 </script>
-
 </body>
 </html>
